@@ -1,0 +1,29 @@
+extends layout
+
+block content
+  div.col-md-4
+  div.col-md-4
+    h1 Find Latest Properties
+    hr
+    form(method="GET", action="./properties").form-horizontal
+      div.form-group
+        label(for="input-postcode") Postcode
+        input(id="input-postcode", placeholder="Input a Postcode", type="text", name="postcode", value="").form-control
+      div.form-group
+        label(for="input-property-type") Property Type
+        div.radio
+          div.col-md-6
+            div.row
+              div.col-md-6
+                label House
+              div-col-md-6
+                input(id="input-property-type-house", name="propertyType" type="radio", value="houses" checked="")
+          div.col-md-6
+            div.row
+              div.col-md-6
+                label Flat
+              div.col-md-6
+                input(id="input-property-type-flat", name="propertyType" type="radio", value="flats")
+      div.form-group
+        button(type=submit).btn.btn-primary.btn-block Submit
+  div.col-md-4
