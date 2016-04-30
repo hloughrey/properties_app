@@ -5,9 +5,19 @@ var postcodes = require('../api/postcodes');
 var properties = require('../api/properties');
 
 router.get('/', function(req, res) {
-  res.json ({message: 'the properties api was called!'})
+  res.json ({message: 'The API was called!'})
 });
-router.get('/properties', properties.getLatest);
-router.get('/postcodes', postcodes.validatePostcodes);
+
+router.get('/properties', function(req, res) {
+  properties.getProperties(req, res, function(data) {
+    res.json(data);
+  })
+});
+
+router.get('/postcodes', function(req, res) {
+  postcodes.validatePostcodes(req, res, function(data) {
+    res.json(data);
+  })
+});
 
 module.exports = router;
