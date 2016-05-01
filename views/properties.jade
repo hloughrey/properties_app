@@ -10,11 +10,12 @@ block content
             th Property Type
             th No. Bedrooms
             th No. Bathrooms
-            th Asking Price
+            th Asking Price (£)
         tbody
+        for data in result.listing
           tr
-            td Mount Street, Liverpool, Merseyside L1
-            td End terrace house
-            td 4
-            td 0
-            td 725000
+            td #{data.street_name}
+            td #{data.property_type}
+            td #{data.num_bedrooms}
+            td #{data.num_bathrooms}
+            td #{data.price}

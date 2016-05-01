@@ -13,10 +13,9 @@ module.exports = {
                           req.query.propertyType).toString();
 
     request(url, function(err, res, body) {
-      if(err) return next(err);
+      if(err) return (err);
       if(res.statusCode != 200)
-        return next(new Error('Abnormal response status code'));
-      console.log(body);
+        return (new Error('Abnormal response status code'));
       callback(JSON.parse(body));
     })
   }
