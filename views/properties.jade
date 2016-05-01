@@ -2,7 +2,7 @@ extends layout
 
 block content
   div.row
-    div.col-md-12
+    div.col-md-8
       table(cellspacing=1, cellpadding=1)
         thead
           tr
@@ -19,3 +19,12 @@ block content
             td #{data.num_bedrooms}
             td #{data.num_bathrooms}
             td #{data.price}
+    div.col-md-4
+      div#map
+
+  <!-- Add Scripts-->
+  script(type='text/javascript').
+    var local_data = !{JSON.stringify(result)};
+    console.log(local_data);
+  script(type='text/javascript' src='/javascripts/external/leaflet/leaflet.js').
+  script(type='text/javascript' src='/javascripts/properties_map.js').
