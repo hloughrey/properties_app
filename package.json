@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "clean": "rm -rf node_modules",
-    "start": "npm run clean && node ./bin/www"
+    "build": "npm run clean && npm install",
+    "start": "node ./bin/www"
   },
   "dependencies": {
     "body-parser": "~1.13.2",
@@ -13,6 +14,7 @@
     "express": "~4.13.1",
     "jade": "~1.11.0",
     "morgan": "~1.6.1",
+    "request": "^2.72.0",
     "serve-favicon": "~2.3.0",
     "util": "^0.10.3"
   }
